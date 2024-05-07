@@ -1,2 +1,2 @@
-alter TABLE salario_classe
-ADD salario varchar(50);
+alter TABLE employees
+ADD id_salario interger;
