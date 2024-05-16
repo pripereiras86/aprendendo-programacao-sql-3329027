@@ -2,8 +2,8 @@ SELECT DISTINCT
 country as País,
 state as Estado_sigla,
 CASE 
-  WHEN state = 'RJ' THEN 'RIO'
-  WHEN state = 'SP' THEN 'SÃO PAULO'
+  WHEN state LIKE 'RJ' THEN 'RIO'
+  WHEN state LIKE 'SP' THEN 'SÃO PAULO'
   ELSE 'N/A'
 END AS Estado 
 FROM CUSTOMERS
