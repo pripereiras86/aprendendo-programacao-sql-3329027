@@ -1,1 +1,10 @@
--- Para a tabela "invoices", crie uma consulta que retorne o país e a soma das compras realizadas nele, bem como o valor da compra mínima e máxima, a quantidade de compras realizadas e o ticket médio de cada compra.
+select
+sum(total) as Valor_Total_Compras,
+count(total) as Quantidade,
+Min(Total) as Compra_Minimo,
+Max(Total) as Compra_maximo,
+round(Avg(total),2) as Compra_Média 
+FROM
+invoices
+where 
+BillingCountry like 'austria';
