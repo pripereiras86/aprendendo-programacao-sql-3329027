@@ -1,7 +1,12 @@
--- Crie uma consulta usando as tabelas "invoices" e "customers" cujo o resultado seja o total de gastos por cliente
-
-
--- Na consulta anterior, insira um filtro para que apresente apenas os clientes que gastaram mais de R$30
-
-
--- Na consulta anterior, insira uma coluna que informe a compra de maior valor feita por cada cliente
+select
+ini.invoiceid,
+sum(inv.total),
+tra.name, avg(tra.unitprice)
+FROM
+invoice_items as ini
+inner join invoices as inv 
+on ini.invoiceid = inv.invoiceid
+inner join tracks as tra
+on ini.trackid = tra.trackid
+group by ini.invoiceid
+having ini.invoiceid = 2;
