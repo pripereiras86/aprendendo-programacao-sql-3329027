@@ -7,4 +7,6 @@ invoices as inv
 inner join invoice_items as invit 
 on inv.invoiceid = invit.invoiceid
 inner join customers as cus
-on inv.customerid = cus.customerid;
+on inv.customerid = cus.customerid
+where 
+country like 'Brazil';
