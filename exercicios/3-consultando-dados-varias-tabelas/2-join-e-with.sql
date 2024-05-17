@@ -12,8 +12,7 @@ on alb.albumid = tra.albumid
 inner join artists as art on 
 alb.artistid = art.artistid)
 
-SELECT
+SELECT 
 ARTISTA,
-COUNT(MUSICA)
-FROM TAB_MUSIC
-WHERE ARTISTA LIKE 'AERO%';
+COUNT(MUSICA) AS QUANT_MUSICA
+FROM TAB_MUSIC;
