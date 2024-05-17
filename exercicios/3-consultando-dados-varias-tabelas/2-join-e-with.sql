@@ -1,4 +1,19 @@
--- Crie uma consulta para realizar inner join com as tabelas "tracks", "albums" e "artists"
+WITH TAB_MUSIC AS (
+SELECT
+alb.albumid as Cod_Album,
+alb.title as Título,
+alb.artistid as Cod_Artista,
+tra.name as Musica,
+art.name as Artista
+FROM
+albums as alb
+inner join tracks as tra 
+on alb.albumid = tra.albumid
+inner join artists as art on 
+alb.artistid = art.artistid)
 
-
--- Refatore a consulta anterior usando a cláusula "with" e verifique o total de músicas existente na base de terminado artista, ex: Caetano Veloso
+SELECT
+ARTISTA,
+COUNT(MUSICA)
+FROM TAB_MUSIC
+WHERE ARTISTA LIKE 'AERO%';
